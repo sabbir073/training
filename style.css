@@ -15,3 +15,12 @@ button{
 input{
     padding:5px 10px;
 }
+table, th, td {
+    border:1px solid black;
+}
+table{
+    margin-top: 20px;
+}
+th,td{
+    padding: 5px 20px;
+}
