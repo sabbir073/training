@@ -40,4 +40,15 @@ input::placeholder{
 input:focus{
     outline: 1px solid #920202;
 }
+.signup{
+    color:#fff;
+    margin-top: 20px;
+}
+.signup a{
+    color:rgb(229, 255, 0);
+    text-decoration: none;
+}
+.signup a:hover{
+    color:rgb(0, 255, 213);
+}
 
