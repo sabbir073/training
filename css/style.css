@@ -30,3 +30,28 @@
 .carousel-dark .carousel-indicators [data-bs-target] {
     background-color: #fff !important;
 }
+.custom-class p{
+    text-align: justify;
+}
+.custom-background{
+    background-color: rgb(10, 104, 104);
+    color: cornsilk;
+}
+.icon-color i{
+    color:rgb(10, 104, 104);
+}
+.card:hover i{
+    transform: rotate(360deg);
+    transition: transform .5s ease-in-out;
+    color: rgb(14, 7, 97);
+}
+.own-shadow {
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+}
+.card:hover{
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+    cursor: pointer;
+}
+.card:hover h5, .card:hover p{
+    color: dodgerblue;
+}
