@@ -55,3 +55,41 @@
 .card:hover h5, .card:hover p{
     color: dodgerblue;
 }
+.team-image{
+    max-width: 80% !important;
+}
+/**.mydiv{
+    border: 3px dashed #e400ff;
+    position: relative;
+}
+.myimage{
+    max-width:30% !important; 
+    position: absolute; 
+    top:-25%; 
+    left: 36%;
+}
+@media only screen and (max-width: 575px) {
+    .myimage {
+        max-width:25% !important; 
+        position: absolute; 
+        top:-25%; 
+        left: 37%;
+    }
+    .mydiv h2{
+        padding-top: 20px;
+    }
+  }
+  **/
+  #map {
+    max-height: 100%;
+  }
+  .list-group-item{
+      border: none !important;
+  }
+  .copyright{
+      margin: 0 !important;
+      padding:0 !important;
+  }
+  .copyright p{
+      margin:8px 0;
+  }
