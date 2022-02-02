@@ -100,15 +100,18 @@
     .datepicker-dropdown.datepicker-orient-top:before {
         border-top: 7px solid rgba(0,0,0,.1);
     }
+   
   </style>
   <body>
     
     <div class="container mt-5">
-      <input type="text" class="form-control myDate" placeholder="your birth date">
+
+      <input type="text" class="form-control datefield" placeholder="your date of birth">
+
       <center><button id="result" class="btn btn-primary mt-3 mb-3">Calculate</button></center>
-      <div class="result">
-        <h2 class="yourAge"></h2><h2 class="error"></h2>
-      </div>
+      
+        <h2 class="yourAge"></h2>
+      
     </div>
    <!-- <script>
       function calculateAge(birthDate){
@@ -228,7 +231,7 @@
 
     </script>-->
 
-    <script>
+    <!--<script>
       var options = {
         orientation: 'bottom',
         autoclose: true,
@@ -257,6 +260,59 @@
         $('.result .error').html(myAge);
       });
 
+    </script>-->
+    <script>
+      $('.datefield').datepicker({
+        orientation: 'bottom',
+        autoclose: true,
+        format: 'dd/mm/yyyy',
+        todayHighlight: true,
+        clearBtn:true,
+      });
+
+      $('#result').click(function(e){
+        e.preventDefault();
+        
+        let inputClick = $('.datefield').datepicker('getDate');
+
+        let showResult = calculateAge(inputClick);
+
+        $('.yourAge').html(showResult);
+
+      });
+
+      function calculateAge(inputDate){
+
+        let nowDate = new Date();
+
+        let nowDay = nowDate.getDate();
+        let nowMonth = nowDate.getMonth() + 1;
+        let nowYear = nowDate.getFullYear();
+
+        let birthDay = inputDate.getDate();
+        let birthMonth = inputDate.getMonth() + 1;
+        let birthYear = inputDate.getFullYear();
+
+        if(nowDay < birthDay){
+          nowDay = nowDay + 30;
+          nowMonth = nowMonth - 1;
+        }
+        if(nowMonth < birthMonth){
+          nowMonth = nowMonth + 12;
+          nowYear = nowYear - 1;
+        }
+
+        let nowAge = nowYear - birthYear;
+        let ageMonth = nowMonth - birthMonth;
+        let ageDay = nowDay - birthDay;
+
+        let result = "Your Age is " +nowAge+ " Year, " +ageMonth+ " Month, " +ageDay+ " Days."
+
+        return result;
+      }
+
+
+      
     </script>
 
   </body>
