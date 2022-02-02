@@ -104,6 +104,8 @@
     width: 600px;
     height: 300px;
   }
-
+.custombg{
+    background-color: rgba(0, 0, 0, 0.808);
+}
 
 
