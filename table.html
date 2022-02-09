@@ -17,11 +17,15 @@
   <style>
     @media (min-width: 1400px){
     .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-        max-width: 600px;
+        max-width: 1320px;
     }
   }
   .result h2{
     display: inline;
+  }
+  input{
+    outline: none;
+    box-shadow: none;
   }
   /*Bootstrap Calendar*/
     .datepicker {
@@ -101,16 +105,26 @@
         border-top: 7px solid rgba(0,0,0,.1);
     }
    
+   
   </style>
   <body>
     
     <div class="container mt-5">
+      <div class="row">
+        <did class="col"><input id="input1" type="text" class="form-control datefield" placeholder="your date of birth"></did>
+        <did class="col"><input id="input2" type="text" class="form-control datefield" placeholder="your date of birth"></did>
+        <did class="col"><input id="input3" type="text" class="form-control datefield" placeholder="your date of birth"></did>
+      </div>
 
-      <input type="text" class="form-control datefield" placeholder="your date of birth">
+      
+      
+      
 
-      <center><button id="result" class="btn btn-primary mt-3 mb-3">Calculate</button></center>
+      <center><!--<button id="result" class="btn btn-primary mt-3 mb-3">Calculate</button>--></center>
       
         <h2 class="yourAge"></h2>
+        <h2 class="yourAge2"></h2>
+        <h2 class="yourAge3"></h2>
       
     </div>
    <!-- <script>
@@ -270,7 +284,43 @@
         clearBtn:true,
       });
 
-      $('#result').click(function(e){
+      $('#input1').on('change', function(e){
+
+        e.preventDefault();
+
+        let inputClick = $(this).datepicker('getDate');
+
+        let showResult = calculateAge(inputClick);
+
+        $('.yourAge').html(showResult);
+
+      });
+
+      $('#input2').on('change', function(e){
+
+        e.preventDefault();
+
+        let inputClick = $(this).datepicker('getDate');
+
+        let showResult = calculateAge(inputClick);
+
+        $('.yourAge2').html(showResult);
+
+        });
+
+        $('#input3').on('change', function(e){
+
+          e.preventDefault();
+
+          let inputClick = $(this).datepicker('getDate');
+
+          let showResult = calculateAge(inputClick);
+
+          $('.yourAge3').html(showResult);
+
+          })
+
+     /** $('#result').click(function(e){
         e.preventDefault();
         
         let inputClick = $('.datefield').datepicker('getDate');
@@ -279,7 +329,7 @@
 
         $('.yourAge').html(showResult);
 
-      });
+      });**/
 
       function calculateAge(inputDate){
 
