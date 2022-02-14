@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Login Page</title>
+        <title><?php echo $pagetitle;?></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/x-icon" href="./images/favicon.jpg">
@@ -11,30 +12,10 @@
         <!--Bootstrap cdn-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-        <style>
-          :root{
-  --main-bg:#e91e63;
-}
-
-.main-bg {
-  background: var(--main-bg) !important;
-}
-
-input:focus, button:focus {
-  border: 1px solid var(--main-bg) !important;
-  box-shadow: none !important;
-}
-
-.form-check-input:checked {
-  background-color: var(--main-bg) !important;
-  border-color: var(--main-bg) !important;
-}
-
-.card, .btn, input{
-  border-radius:0 !important;
-}
-        </style>
-      </head>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+    </head>
     <body>
         <header>
             <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
@@ -49,7 +30,7 @@ input:focus, button:focus {
                     <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
                       <ul class="navbar-nav">
                         <li class="nav-item">
-                          <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                          <a class="nav-link" aria-current="page" href="/">Home</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="about.html">About Us</a>
@@ -64,7 +45,7 @@ input:focus, button:focus {
                         <a class="nav-link" href="contact.html">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="login.html">Login</a>
+                            <a class="nav-link" href="login.html">Login</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="signup.html">Sign Up</a>
@@ -74,39 +55,3 @@ input:focus, button:focus {
                   </div>
               </nav>
         </header>
-        <main>
-          <div class="container">
-            <div class="row justify-content-center mt-5">
-              <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="card shadow">
-                  <div class="card-title text-center border-bottom">
-                    <h2 class="p-3">Login</h2>
-                  </div>
-                  <div class="card-body">
-                    <form method="post" action="new.php">
-                      <div class="mb-4">
-                        <label for="username" class="form-label">Your Email</label>
-                        <input type="email" class="form-control" required name="username">
-                      </div>
-                      <div class="mb-4">
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" name="password" required>
-                      </div>
-                      <div class="d-grid">
-                        <button type="submit" class="btn text-light main-bg" name="submit">Login</button>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </main>
-        <footer>
-
-        </footer>
-        
-        <script src="" async defer></script>
-        
-    </body>
-</html>
