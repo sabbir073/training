@@ -1,9 +1,30 @@
 
 <?php
+
+if(isset($_POST['submit'])){
+
+  $name = $_REQUEST['name'];
+  $email = $_REQUEST['email'];
+  $phone = $_REQUEST['phone'];
+  $message = $_REQUEST['message'];
+
+
+  $to = "md.sabbir073@gmail.com";
+  $subject = "New Contact Form Sumission";
+  $txt = "Name: " . $name . '\r\n' . 'Email: '. $email. '\r\n' . 'Phone: '. $phone . '\r\n' . $message;
+  $headers = "From: ".$email . "\r\n";
+
+  mail($to,$subject,$txt,$headers);
+}
+
+
+
+
 $pagetitle = "Contact Us";
 include('header.php');
 
 ?>
+
 <style>
     .card{
       height:300px !important;
@@ -11,12 +32,12 @@ include('header.php');
 </style>
         <div class="p-5 mb-4 custombg rounded-3">
           <div class="container-fluid py-5">
-            <center><h1 class="fw-light text-white text-uppercase border-bottom border-success pb-2 d-inline">Contact us</h1></center>
+            <center><h1 class="abc fw-light text-white text-uppercase border-bottom border-success pb-2 d-inline">Contact us</h1></center>
           </div>
         </div>
         <main>
             <div class="row">
-              <div class="col-md-12" style="height: 350px;">
+              <div class="col-md-12">
                 <div id="map"></div>
               </div>
             </div>
@@ -76,7 +97,7 @@ include('header.php');
                         <textarea class="form-control my-3" name="message" placeholder="Message" rows="10"></textarea>
                       </div>
                       <div>
-                        <button type="submit" class="btn btn-lg btn-info">CONTACT US</button>
+                        <button type="submit" name="submit" class="btn btn-lg btn-info">CONTACT US</button>
                       </div>
                     </form>
                   </div>

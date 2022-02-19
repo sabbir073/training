@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $database = new mysqli("localhost","root","","training");
 
@@ -18,10 +19,10 @@ if(isset($_POST['submit'])){
     $count = mysqli_num_rows($result);
 
     if($count > 0){
-        echo 'Your are logged in';
+        $_SESSION["loggedin"] = "loggedin";
     }
     else{
-        echo 'You are not logged in';
+        $_SESSION["loggedin"] = "loggedout";
     }
 
 }

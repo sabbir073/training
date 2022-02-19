@@ -1,4 +1,20 @@
+<?php
+session_start();
 
+if(empty($_SESSION["loggedin"])){
+  $_SESSION["loggedin"] = "";
+}
+?>
+
+<style>
+  @media (max-width: 576px) {
+    .abcclass{
+      margin-left:25%;
+      margin-top:10px;
+      margin-bottom: 10px;
+    }
+ }
+</style>
 <!DOCTYPE html>
 <html>
     <head>
@@ -30,28 +46,54 @@
                     <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
                       <ul class="navbar-nav">
                         <li class="nav-item">
-                          <a class="nav-link" aria-current="page" href="/">Home</a>
+                          <a class="nav-link <?php if($pagetitle == 'Home'){echo 'active';}?>" href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="about.html">About Us</a>
+                          <a class="nav-link <?php if($pagetitle == 'About Us'){echo 'active';}?>" href="about.php">About Us</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="services.html">Services</a>
+                          <a class="nav-link <?php if($pagetitle == 'Services'){echo 'active';}?>" href="services.php">Services</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="team.html">Team</a>
+                            <a class="nav-link <?php if($pagetitle == 'Our Team'){echo 'active';}?>" href="team.php">Team</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
+                        <a class="nav-link <?php if($pagetitle == 'Contact Us'){echo 'active';}?>" href="contact.php">Contact</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="login.html">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="signup.html">Sign Up</a>
-                        </li>
+                        <?php if ($_SESSION["loggedin"] !== "loggedin"){ ?>
+                          <li class="nav-item">
+                          <a class="nav-link <?php if($pagetitle == 'Login'){echo 'active';}?>" href="login.php">Login</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link <?php if($pagetitle == 'Sign Up'){echo 'active';}?>" href="signup.php">Sign Up</a>
+                      </li>
+                       <?php }
+                        else{ ?>
+                          <li class="nav-item">
+                          <a class="nav-link" href="logout.php">Logout</a>
+                      </li>
+                        <?php
+                        }
+                        ?>
+
+                        
+
                       </ul>
                     </div>
+                    <?php if (!empty($_SESSION["username"])){
+                    ?>
+
+                    <div class="abcclass badge bg-primary text-white align-self-center">
+                    <b><?php echo 'Welcome ' . $_SESSION["username"];  ?></b>
+                    </div>
+
+                    <?php
+                    }
+                    ?>
+                    
+                    
+                  
                   </div>
+                  
               </nav>
         </header>

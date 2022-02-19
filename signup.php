@@ -1,5 +1,11 @@
 <?php
+$pagetitle = "Sign Up";
+include('header.php');
 
+if($_SESSION["loggedin"] == "loggedin"){
+  header("location: index.php");
+  exit();
+}
 $database = new mysqli("localhost","root","","training");
 
 if ($database->connect_error) {
@@ -39,7 +45,7 @@ if(isset($_POST['register'])){
           $excute = $database->query($query);
 
           if($excute == True){
-            header('Location: index.html');
+            header('Location: index.php');
           }
           else{
             $error = "Something Went wrong";
@@ -53,17 +59,9 @@ if(isset($_POST['register'])){
     }
 }
 
-$pagetitle = "Sign Up";
-include('header.php');
+
 
 ?>
-
-<style>
-          .container{
-            width:720px !important;
-          }
-          
-        </style>
 
         <main>
             <div class="container">
